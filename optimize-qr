@@ -1,0 +1,10 @@
+import pyqrcode
+from PIL import Image
+
+name = input('Enter a name for the QR: ')  # Name of the QR image
+link = input('Enter the link to generate the QR: ')  # The link you want to convert
+qrcode = pyqrcode.create(link)
+qrcode.png(name + ".png", scale=5)
+
+# Open the image with the correct file name
+Image.open(name + ".png")
